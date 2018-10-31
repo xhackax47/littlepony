@@ -1,0 +1,13 @@
+<h1 style="text-align:center">Entrer une nouvelle Course</h1>
+<form (ngSubmit)="onSubmit()">
+  <p>Localisation : <input type="text" id="location" name="location" [(ngModel)]="model.location" required></p>
+  <br>
+  <p>Date : <input type="date" id="date" name="date" [(ngModel)]="model.date" required></p>
+  <br>
+  <div *ngFor="let pony of ponies">
+    <input  type="checkbox" id="ponies" name="pony" [(ngModel)]="model.ponies" checked>
+    <label for="ponies">{{pony.name}}</label>
+  </div>
+  <br>
+  <button type="submit">Ajouter une nouvelle Course</button>
+</form>

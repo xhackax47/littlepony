@@ -1,0 +1,8 @@
+<div id="tabPonies">
+  <h2>Liste Poneys</h2>
+  <ul>
+    <li *ngFor="let p of tabPonies">
+      <app-pony-details [pony]="p"></app-pony-details>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,8 @@
+<div id="tabRaces">
+<p *ngIf="tabRaces.length == 0">Aucune course enregistrée</p>
+<ul *ngIf="tabRaces.length > 0">
+  <li *ngFor="let r of tabRaces">
+    <app-race-details [race]="r"></app-race-details>
+  </li>
+</ul>
+</div>
