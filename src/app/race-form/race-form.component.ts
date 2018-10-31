@@ -13,19 +13,25 @@ import { PonyService } from '../pony.service';
 export class RaceFormComponent implements OnInit {
   model: Race;
   ponies: Array<Pony>;
+  poniesSelected: Array<boolean>;
   constructor(private service: RaceService, private router: Router, private psvc: PonyService) {
     this.model = new Race();
-    this.model.ponies=[]; 
-    psvc.getAllPonies().subscribe((listPony) => this.ponies = listPony)
+    this.model.ponies = [];
+    psvc.getAllPonies().subscribe((listPony) => this.ponies = listPony);
+    this.poniesSelected = new Array();
   }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    this.model.ponies.forEach((pony: Pony)=> this.model.ponies.push(pony));
+    this.poniesSelected.forEach((e, i) => {
+      if (e === true) {
+        this.model.ponies.push(this.ponies[i]);
+      }
+    });
     this.service.addRace(this.model);
-    this.router.navigate(['/Races'])
+    this.router.navigate(['/Races']);
   }
 
 }
