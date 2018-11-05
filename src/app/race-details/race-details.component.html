@@ -1,10 +1,12 @@
-<p>Infos Course : {{race.id}} - {{race.location}} - {{race.date | date: "dd/MM/yyyy"}}</p>
+<div id="detailsRace">
+<h3>Infos Course : {{race.id}} - {{race.location}} - {{race.date.day}}/{{race.date.month}}/{{race.date.year}}</h3>
 <ul *ngIf="race.ponies.length > 0">
   <li id="concurrent" *ngFor="let p of race.ponies">
-    <h3>Profil concurrent</h3>
+    <h4>Concurrent</h4>
     <p>Nom : {{p.name}}</p>
     <p>Poids : {{p.weight}}</p>
     <p>Age : {{p.age}}</p>
     <p>Couleur : {{p.color}}</p>
   </li>
 </ul>
+</div>

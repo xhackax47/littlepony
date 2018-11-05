@@ -4,6 +4,8 @@ import { RaceService } from '../race.service';
 import { Race } from '../race';
 import { Pony } from '../pony';
 import { PonyService } from '../pony.service';
+import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-race-form',
@@ -13,24 +15,27 @@ import { PonyService } from '../pony.service';
 export class RaceFormComponent implements OnInit {
   model: Race;
   ponies: Array<Pony>;
-  poniesSelected: Array<boolean>;
-  constructor(private service: RaceService, private router: Router, private psvc: PonyService) {
+  // poniesSelected: Array<boolean>;
+  dateModel: NgbDateStruct;
+  date: { year: number, month: number, day: number };
+  constructor(private raceSvc: RaceService, private router: Router, private ponySvc: PonyService, private Calendar: NgbCalendar) {
+    this.dateModel = this.Calendar.getToday();
     this.model = new Race();
     this.model.ponies = [];
-    psvc.getAllPonies().subscribe((listPony) => this.ponies = listPony);
-    this.poniesSelected = new Array();
+    this.ponySvc.getAllPonies().subscribe((listPony) => this.ponies = listPony);
+    // this.poniesSelected = new Array();
   }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    this.poniesSelected.forEach((e, i) => {
-      if (e === true) {
-        this.model.ponies.push(this.ponies[i]);
-      }
-    });
-    this.service.addRace(this.model);
+    // this.poniesSelected.forEach((e, i) => {
+    //   if (e === true) {
+    //    this.model.ponies.push(this.ponies[i]);
+    //   }
+    // });
+    this.raceSvc.addRace(this.model);
     this.router.navigate(['/Races']);
   }
 

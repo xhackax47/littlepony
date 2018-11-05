@@ -1,13 +1,26 @@
-<h1 style="text-align:center">Entrer une nouvelle Course</h1>
-<form (ngSubmit)="onSubmit()">
-  <p>Localisation : <input type="text" id="location" name="location" [(ngModel)]="model.location" required></p>
+<h2>Entrer une nouvelle Course</h2>
+<form (ngSubmit)="onSubmit()" style="text-align:center">
+  <p>Localisation :
+    <br>
+    <input type="text" id="location" name="location" [(ngModel)]="model.location" required>
+  </p>
+  <p>Date :
+    <br>
+    <ngb-datepicker #dp [(ngModel)]="dateModel" [ngModelOptions]="{standalone: true}"></ngb-datepicker>
+  </p>
   <br>
-  <p>Date : <input type="date" id="date" name="date" [(ngModel)]="model.date" required></p>
-  <br>
-  <div *ngFor="let pony of ponies">
+  <p-pickList [source]="ponies" [target]="model.ponies" [responsive]="true" dragdrop="true">
+    <ng-template let-pony pTemplate="item">
+      <div class="ui-helper-clearfix">
+        {{pony.name}}
+      </div>
+    </ng-template>
+  </p-pickList>
+  <!-- <div *ngFor="let pony of ponies">
     <input  type="checkbox" id="ponies" name="pony" [(ngModel)]="poniesSelected[pony.id]" checked>
     <label for="ponies">{{pony.name}}</label>
-  </div>
+  </div> -->
   <br>
-  <button type="submit">Ajouter une nouvelle Course</button>
+  <button pButton type="submit" label="Ajouter une nouvelle Course" class="ui-button-rounded ui-button-success"></button>
+  <br>
 </form>

@@ -1,0 +1,26 @@
+<h2>Entrer une nouvelle Course</h2>
+<form [formGroup]="raceForm" (ngSubmit)="onSubmit()" style="text-align:center">
+  <p>Localisation :
+    <br>
+    <input type="text" id="location" name="location" formControlName="location">
+  </p>
+  <p>Date :
+    <br>
+    <ngb-datepicker #dp formControlName="date"></ngb-datepicker>
+  </p>
+  <br>
+  <p-pickList [source]="srcPonies" [target]="tgtPonies" [responsive]="true" dragdrop="true">
+    <ng-template let-pony pTemplate="item">
+      <div class="ui-helper-clearfix">
+        {{pony.name}}
+      </div>
+    </ng-template>
+  </p-pickList>
+  <br>
+  <button pButton type="submit" label="Ajouter une nouvelle Course" class="ui-button-rounded ui-button-success" ></button>
+  <br>
+</form>
+
+<p>Valeur: {{raceForm.value | json }}</p>
+<p>Status : {{raceForm.status}}</p>
+<!-- <br>CLASSES DE L'INPUT : {{spy.className}} -->

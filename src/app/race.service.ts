@@ -18,6 +18,9 @@ export class RaceService {
   }
 
   addRace(race: Race): void{
+    for(const p of race.ponies){
+      
+    }
     this.tabRaces.push(race);
   }
 }

@@ -4,6 +4,17 @@ body{
 }
 
 h1{
+    text-align: center;
+    border: 2px double pink;
+    color: palevioletred;
+    font-weight: bolder;
+    border-radius: 10px;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+h2{
+    text-align: center;
     border: 2px double pink;
     color: whitesmoke;
     font-weight: bolder;
@@ -12,20 +23,30 @@ h1{
     margin-right: 35%;
 }
 
+form{
+    text-align: center;
+}
+
 nav ul{
     list-style-type: none;
 }
 
-nav a{
-    color: whitesmoke;
+#menuPony{
+    background-color: #331212;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-left: 35%;
+    margin-right: 35%;
 }
 
-nav a:hover{
-    color: whitesmoke;
-}
-
-nav a:visited{
-    color: whitesmoke;
+#menuPony:hover{
+    background-color: black;
+    text-align: center;
+    border: 1px solid snow;
+    border-radius: 20px;
+    margin-left: 35%;
+    margin-right: 35%;
 }
 
 #imgPony{
