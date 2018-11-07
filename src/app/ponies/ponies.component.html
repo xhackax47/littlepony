@@ -3,6 +3,12 @@
   <ul>
     <li *ngFor="let p of tabPonies">
       <app-pony-details [pony]="p"></app-pony-details>
+      <button pButton routerLink="/PonySolo/{{p.id}}" class="ui-button-rounded ui-button-success">Afficher</button>
+      <br>
+      <button pButton routerLink="/PonyUpdate/{{p.id}}" class="ui-button-rounded ui-button-warning">Modifier</button>
+      <br>
+      <button pButton (click)=delete(p.id) class="ui-button-rounded ui-button-danger">Effacer</button>
     </li>
+    <br>
   </ul>
 </div>

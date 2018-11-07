@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Pony } from "./../pony";
+import { PonyService } from '../pony.service';
 
 @Component({
   selector: 'app-pony-details',
@@ -19,7 +20,6 @@ export class PonyDetailsComponent implements OnInit {
     // this.pony4 = new Pony('Jolly Orange', 700, 5, 'Orange');
    }
 
-  ngOnInit() {
-  }
+   ngOnInit(): void {}
 
 }

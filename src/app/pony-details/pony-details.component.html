@@ -1,7 +1,16 @@
-<div id="ponyDetails">
-  <ul>
-    <li>
-      {{pony.id}} - {{pony.name}} - {{pony.weight}} - {{pony.age}} - {{pony.color}}
-    </li>
-  </ul>
-</div>
+<p-card header="Poney : " id="ponyCard">
+    <p-header>
+      <img src="https://store-images.s-microsoft.com/image/apps.7250.9007199266242713.869acf2e-81f3-40a6-96b6-4fe87b4bcca2.af469267-b778-4abe-9c75-3b2b8f8e4325?mode=crop&q=90&h=270&w=270&format=jpg&background=%2304A2FA">
+    </p-header>
+    <div id="detailsPony">
+      <ul>
+        <li id="concurrent">
+          <p>Nom : {{pony.name}}</p>
+          <p>Poids : {{pony.weight}}</p>
+          <p>Age : {{pony.age}}</p>
+          <p>Couleur : {{pony.color}}</p>
+        </li>
+      </ul>
+    </div>
+  </p-card>
+  <br>

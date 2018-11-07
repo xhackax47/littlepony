@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Race } from '../race';
 import { RaceService } from '../race.service';
+import { race } from 'rxjs';
 
 @Component({
   selector: 'app-races',
@@ -9,11 +10,13 @@ import { RaceService } from '../race.service';
 })
 export class RacesComponent implements OnInit {
   tabRaces: Array<Race>;
-  constructor(private service: RaceService) { 
-    this.service.getAllRaces().subscribe(r => this.tabRaces = r);
+  
+  constructor(private service: RaceService) {
+    this.tabRaces = [];
   }
 
   ngOnInit() {
+    this.service.getAllRaces().subscribe(r =>this.tabRaces = r);
   }
 
 }

@@ -6,27 +6,23 @@ import { Pony } from '../pony';
 import { PonyService } from '../pony.service';
 import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 
-
 @Component({
   selector: 'app-race-form',
   templateUrl: './race-form.component.html',
   styleUrls: ['./race-form.component.css']
 })
-export class RaceFormComponent implements OnInit {
+export class RaceFormComponent {
   model: Race;
   ponies: Array<Pony>;
-  // poniesSelected: Array<boolean>;
   dateModel: NgbDateStruct;
-  date: { year: number, month: number, day: number };
-  constructor(private raceSvc: RaceService, private router: Router, private ponySvc: PonyService, private Calendar: NgbCalendar) {
-    this.dateModel = this.Calendar.getToday();
+  date: {year: number, month: number, day: number};
+  // poniesSelected: Array<boolean>;
+  constructor(private raceSvc: RaceService, private router: Router, private ponySvc: PonyService, private calendar: NgbCalendar) {
+    this.dateModel = this.calendar.getToday();
     this.model = new Race();
     this.model.ponies = [];
     this.ponySvc.getAllPonies().subscribe((listPony) => this.ponies = listPony);
     // this.poniesSelected = new Array();
-  }
-
-  ngOnInit() {
   }
 
   onSubmit() {
@@ -34,9 +30,11 @@ export class RaceFormComponent implements OnInit {
     //   if (e === true) {
     //    this.model.ponies.push(this.ponies[i]);
     //   }
-    // });
+    // }); 
+    this.model.date = new Date(this.dateModel.year, this.dateModel.month -1, this.dateModel.day);
+    // this.model.date = new Date();
     this.raceSvc.addRace(this.model);
-    this.router.navigate(['/Races']);
+    this.model = new Race();
   }
 
 }

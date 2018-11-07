@@ -9,7 +9,7 @@ import { Race } from '../race';
 export class RaceDetailsComponent implements OnInit {
   @Input() race: Race;
   
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

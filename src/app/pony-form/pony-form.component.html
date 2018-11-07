@@ -1,4 +1,5 @@
-<h2>Entrer un nouveau Poney</h2>
+<h2 *ngIf="add">Entrer un nouveau Poney</h2>
+<h2 *ngIf="!add">Entrer un nouveau Poney</h2>
 <form (ngSubmit)="onSubmit()">
   <p>Nom : <input type="text" id="name" name="name" [(ngModel)]="model.name" required/>
   <br>
@@ -8,5 +9,6 @@
   <br>
   <p>Couleur : <input type="text" id="color" name="color" [(ngModel)]="model.color" required/></p>
   <br>
-  <button pButton type="submit" class="ui-button-rounded ui-button-success">Ajouter un nouveau Poney</button>
+  <button pButton *ngIf="add" type="submit" class="ui-button-rounded ui-button-success">Ajouter un nouveau Poney</button>
+  <button pButton *ngIf="!add" type="submit" class="ui-button-rounded ui-button-success">Mettre à jour Poney</button>
 </form>

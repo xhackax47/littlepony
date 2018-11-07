@@ -8,6 +8,8 @@ import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap'
 import { PickListModule } from 'primeng/picklist';
 import { ButtonModule } from 'primeng/button';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { CardModule } from 'primeng/primeng';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PonyDetailsComponent } from './pony-details/pony-details.component';
@@ -20,16 +22,19 @@ import { TabMenuComponent } from './tab-menu/tab-menu.component';
 import { IntroComponent } from './intro/intro.component';
 import { PonyReactiveFormComponent } from './pony-reactive-form/pony-reactive-form.component';
 import { RaceReactiveFormComponent } from './race-reactive-form/race-reactive-form.component';
-
+import { PonyComponent } from './pony/pony.component';
 
 const routes: Routes = [
   { path: '', component: IntroComponent },
   { path: 'Races', component: RacesComponent },
   { path: 'Ponies', component: PoniesComponent },
   { path: 'Pony', component: PonyFormComponent },
+  { path: 'PonyUpdate/:id', component: PonyFormComponent },
   { path: 'PonyR', component: PonyReactiveFormComponent },
   { path: 'Race', component: RaceFormComponent },
-  { path: 'RaceR', component: RaceReactiveFormComponent }
+  { path: 'RaceUpdate/:id', component: RaceFormComponent },
+  { path: 'RaceR', component: RaceReactiveFormComponent },
+  { path: 'PonySolo/:id', component: PonyComponent },
 ]
 
 @NgModule({
@@ -44,7 +49,8 @@ const routes: Routes = [
     TabMenuComponent,
     IntroComponent,
     PonyReactiveFormComponent,
-    RaceReactiveFormComponent
+    RaceReactiveFormComponent,
+    PonyComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,9 @@ const routes: Routes = [
     PickListModule,
     ButtonModule,
     TabMenuModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,30 +5,31 @@ body{
 
 h1{
     text-align: center;
-    border: 2px double pink;
     color: palevioletred;
     font-weight: bolder;
-    border-radius: 10px;
-    margin-left: 35%;
-    margin-right: 35%;
+    margin: 0 auto;
 }
 
 h2{
     text-align: center;
-    border: 2px double pink;
     color: whitesmoke;
     font-weight: bolder;
-    border-radius: 10px;
-    margin-left: 35%;
-    margin-right: 35%;
+    margin: 10 auto;
 }
 
 form{
     text-align: center;
+    margin: 0 auto;
 }
 
 nav ul{
     list-style-type: none;
+}
+
+p-tabMenu{
+    width:100%;
+    margin: 0 auto;
+    border: 0;
 }
 
 #menuPony{
@@ -36,8 +37,7 @@ nav ul{
     text-align: center;
     border: 1px solid black;
     border-radius: 20px;
-    margin-left: 35%;
-    margin-right: 35%;
+    margin: 0 auto;
 }
 
 #menuPony:hover{
@@ -51,18 +51,23 @@ nav ul{
 
 #imgPony{
     text-align: center;
-    margin: auto;
+    margin: 0 auto;
     padding: 20px;
+}
+
+#raceCard{
+    background-color: pink;
+}
+
+#ponyCard{
+    background-color: pink;
 }
 
 #tabPonies{
     color: pink;
-    border: 1px solid whitesmoke;
-    border-radius: 20px;
     text-align: center;
-    margin-left: 35%;
-    margin-right: 35%;
-    margin-bottom: 20px;
+    width: 20%;
+    margin: 0 auto;
 }
 
 #tabPonies ul{
@@ -72,18 +77,12 @@ nav ul{
 
 #tabRaces{
     color: pink;
-    border: 1px solid whitesmoke;
-    border-radius: 20px;
     text-align: center;
-    margin-left: 35%;
-    margin-right: 35%;
+    width: 20%;
+    margin: 0 auto;
 }
 
 #tabRaces ul{
     list-style: none;
     padding: 0;
-}
-
-#concurrent{
-    border: 1px solid whitesmoke;
 }

@@ -1,12 +1,18 @@
-<div id="detailsRace">
-<h3>Infos Course : {{race.id}} - {{race.location}} - {{race.date.day}}/{{race.date.month}}/{{race.date.year}}</h3>
-<ul *ngIf="race.ponies.length > 0">
-  <li id="concurrent" *ngFor="let p of race.ponies">
-    <h4>Concurrent</h4>
-    <p>Nom : {{p.name}}</p>
-    <p>Poids : {{p.weight}}</p>
-    <p>Age : {{p.age}}</p>
-    <p>Couleur : {{p.color}}</p>
-  </li>
-</ul>
-</div>
+<p-card header="Course : " id="raceCard">
+  <p-header>
+    <img src="https://store-images.s-microsoft.com/image/apps.7250.9007199266242713.869acf2e-81f3-40a6-96b6-4fe87b4bcca2.af469267-b778-4abe-9c75-3b2b8f8e4325?mode=crop&q=90&h=270&w=270&format=jpg&background=%2304A2FA">
+  </p-header>
+  <div id="detailsRace">
+    <h3>Infos Course : {{race.id}} - {{race.location}} - {{race.date.day}}/{{race.date.month}}/{{race.date.year}}</h3>
+    <ul *ngIf="race.ponies.length > 0">
+      <li id="concurrent" *ngFor="let p of race.ponies">
+        <h4>Concurrent</h4>
+        <p>Nom : {{p.name}}</p>
+        <p>Poids : {{p.weight}}</p>
+        <p>Age : {{p.age}}</p>
+        <p>Couleur : {{p.color}}</p>
+      </li>
+    </ul>
+  </div>
+</p-card>
+<br>

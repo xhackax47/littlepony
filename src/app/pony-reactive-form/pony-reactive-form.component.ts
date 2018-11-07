@@ -21,10 +21,10 @@ export class PonyReactiveFormComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    const p: Pony = this.ponyForm.value;
+    const p: Pony = new Pony(this.ponyForm.value);
     p.id = 0;
     this.service.addPony(p);
-    this.router.navigate(['/Ponies'])
+    
   }
 
 }
