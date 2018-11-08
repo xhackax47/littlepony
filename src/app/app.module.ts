@@ -23,6 +23,10 @@ import { IntroComponent } from './intro/intro.component';
 import { PonyReactiveFormComponent } from './pony-reactive-form/pony-reactive-form.component';
 import { RaceReactiveFormComponent } from './race-reactive-form/race-reactive-form.component';
 import { PonyComponent } from './pony/pony.component';
+import { LoginComponent } from './login/login.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { UserReactiveFormComponent } from './user-reactive-form/user-reactive-form.component';
+import { PonyTransformPipe } from './pony-transform.pipe';
 
 const routes: Routes = [
   { path: '', component: IntroComponent },
@@ -35,6 +39,8 @@ const routes: Routes = [
   { path: 'RaceUpdate/:id', component: RaceFormComponent },
   { path: 'RaceR', component: RaceReactiveFormComponent },
   { path: 'PonySolo/:id', component: PonyComponent },
+  { path: 'User', component: UserFormComponent },
+  { path: 'UserR', component: UserReactiveFormComponent },
 ]
 
 @NgModule({
@@ -50,7 +56,11 @@ const routes: Routes = [
     IntroComponent,
     PonyReactiveFormComponent,
     RaceReactiveFormComponent,
-    PonyComponent
+    PonyComponent,
+    LoginComponent,
+    UserFormComponent,
+    UserReactiveFormComponent,
+    PonyTransformPipe
   ],
   imports: [
     BrowserModule,

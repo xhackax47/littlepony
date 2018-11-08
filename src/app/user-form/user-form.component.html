@@ -1,0 +1,11 @@
+<h2 *ngIf="add">Entrer un nouvel Utilisateur</h2>
+<h2 *ngIf="!add">Entrer un nouvel Utilisateur</h2>
+<form (ngSubmit)="onSubmit()">
+  <p>Nom : <input type="text" id="login" name="login" [(ngModel)]="model.login" required/>
+  <br>
+  <p>Age : <input type="password" id="password" name="password" [(ngModel)]="model.password" required/>
+  <br>
+  <br>
+  <button pButton label="Ajouter un nouveau Utilisateur" *ngIf="add" type="submit" class="ui-button-rounded ui-button-success"></button>
+  <button pButton label="Mettre à jour Utilisateur" *ngIf="!add" type="submit" class="ui-button-rounded ui-button-success"></button>
+</form>

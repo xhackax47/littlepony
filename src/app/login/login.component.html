@@ -1,0 +1,17 @@
+<p *ngIf="logged">Bienvenue {{identity}}</p>
+<br>
+<form *ngIf="!logged" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <label for="name"><b>Nom d'utilisateur</b></label>
+    <input type="text" placeholder="Nom Utilisateur" name="login" [(ngModel)]="model.login" required>
+
+    <label for="password"><b>Mot de passe</b></label>
+    <input type="password" placeholder="Mot de Passe" name="password" [(ngModel)]="model.password" required>
+
+    <button pButton label="Connexion" type="submit" class="ui-button-rounded ui-button-success"></button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+  {{message}}
+</form>

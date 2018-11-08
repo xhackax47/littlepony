@@ -9,6 +9,6 @@
   <br>
   <p>Couleur : <input type="text" id="color" name="color" [(ngModel)]="model.color" required/></p>
   <br>
-  <button pButton *ngIf="add" type="submit" class="ui-button-rounded ui-button-success">Ajouter un nouveau Poney</button>
-  <button pButton *ngIf="!add" type="submit" class="ui-button-rounded ui-button-success">Mettre à jour Poney</button>
+  <button pButton label="Ajouter un nouveau Poney" *ngIf="add" type="submit" class="ui-button-rounded ui-button-success"></button>
+  <button pButton label="Mettre à jour Poney" *ngIf="!add" type="submit" class="ui-button-rounded ui-button-success"></button>
 </form>

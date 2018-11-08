@@ -8,7 +8,7 @@
     <br>
   <p>Couleur : <input type="text" id="color" name="color" formControlName="color" /></p>
     <br>
-  <button pButton type="submit" class="ui-button-rounded ui-button-success" [disabled]="!ponyForm.valid">Ajouter un nouveau Poney</button>
+  <button pButton label="Ajouter un nouveau Poney" type="submit" class="ui-button-rounded ui-button-success" [disabled]="!ponyForm.valid"></button>
 </form>
 
 <p>Valeur: {{ponyForm.value | json }}</p>

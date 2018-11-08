@@ -12,13 +12,15 @@ export class TabMenuComponent implements OnInit{
 
   ngOnInit() {
     this.links = [
-      { label: 'Accueil', icon: 'fa fa-fw fa-bar-chart', routerLink: ['/'] },
-      { label: 'Courses', icon: 'fa fa-fw fa-bar-chart', routerLink: ['/Races'] },
-      { label: 'Ajouter Course (Form)', icon: 'fa fa-fw fa-calendar', routerLink: ['/Race']},
-      { label: 'Ajouter Course (ReactiveForm)', icon: 'fa fa-fw fa-calendar', routerLink: ['/RaceR']},
-      { label: 'Liste Poneys', icon: 'fa fa-fw fa-book', routerLink: ['/Ponies'] },
-      { label: 'Ajouter Poney (Form)', icon: 'fa fa-fw fa-support', routerLink: ['/Pony'] },
-      { label: 'Ajouter Poney (ReactiveForm)', icon: 'fa fa-fw fa-support', routerLink: ['/PonyR'] }
+      { label: 'Accueil', routerLink: ['/'] },
+      { label: 'Creer Utilisateur (Form)', routerLink: ['/User'] },
+      { label: 'Creer Utilisateur (ReactiveForm)', routerLink: ['/UserR'] },
+      { label: 'Courses', routerLink: ['/Races'] },
+      { label: 'Ajouter Course (Form)', routerLink: ['/Race']},
+      { label: 'Ajouter Course (ReactiveForm)', routerLink: ['/RaceR']},
+      { label: 'Poneys', routerLink: ['/Ponies'] },
+      { label: 'Ajouter Poney (Form)', routerLink: ['/Pony'] },
+      { label: 'Ajouter Poney (ReactiveForm)', routerLink: ['/PonyR'] }
     ];
   }
 }

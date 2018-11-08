@@ -1,14 +1,13 @@
-<h2>Liste Poneys</h2>
+<h2>Poneys</h2>
 <div id="tabPonies">
-  <ul>
+  <p *ngIf="tabPonies.length == 0">Aucune poney enregistré</p>
+  <ul *ngIf="tabPonies.length > 0">
     <li *ngFor="let p of tabPonies">
       <app-pony-details [pony]="p"></app-pony-details>
-      <button pButton routerLink="/PonySolo/{{p.id}}" class="ui-button-rounded ui-button-success">Afficher</button>
-      <br>
-      <button pButton routerLink="/PonyUpdate/{{p.id}}" class="ui-button-rounded ui-button-warning">Modifier</button>
-      <br>
-      <button pButton (click)=delete(p.id) class="ui-button-rounded ui-button-danger">Effacer</button>
+      <!-- {{p | ponyTransform}} -->
+      <button pButton label="Afficher" routerLink="/PonySolo/{{p.id}}" class="ui-button-rounded ui-button-success"></button>
+      <button pButton label="Modifier" routerLink="/PonyUpdate/{{p.id}}" class="ui-button-rounded ui-button-warning"></button>
+      <button pButton label="Effacer" (click)=delete(p.id) class="ui-button-rounded ui-button-danger"></button>
     </li>
-    <br>
   </ul>
 </div>
