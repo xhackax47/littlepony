@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class UserService {
   url: String = 'http://localhost:8094/api/users';
   tabUsers: Array<User>;
+  authenticated = false;
 
   httpOptions = {
     headers: new HttpHeaders().set('Content-type','application/json')
@@ -27,7 +28,6 @@ export class UserService {
   }
 
   getUserByName(name: string): Observable<User> {
-    console.log(name);
     return this.http.get<User>(this.url + '/user/' + name, this.httpOptions);
   }
 
@@ -42,4 +42,21 @@ export class UserService {
   deleteUser(id: number): void{
     this.http.delete(this.url + '/' + id, this.httpOptions).subscribe(() => this.router.navigate(['/']));
   }
+
+  authenticate(credentials, callback) {
+
+    const headers = new HttpHeaders(credentials ? {
+        authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
+    } : {});
+
+    this.http.get('user', {headers: headers}).subscribe(response => {
+        if (response['name']) {
+            this.authenticated = true;
+        } else {
+            this.authenticated = false;
+        }
+        return callback && callback();
+    });
+
+}
 }

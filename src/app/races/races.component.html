@@ -2,8 +2,9 @@
 <div id="tabRaces">
   <p *ngIf="tabRaces.length == 0">Aucune course enregistrée</p>
   <ul *ngIf="tabRaces.length > 0">
-    <li *ngFor="let r of tabRaces">
-      <app-race-details [race]="r"></app-race-details>
+    <li *ngFor="let r of tabRaces, let i = index">
+      <h4>Total de vote : {{votes[i]}}</h4>
+      <app-race-details [race]="r" (onClick)="onClickParent($event)"></app-race-details>
     </li>
   </ul>
 </div>
