@@ -8,7 +8,7 @@
     <label for="password"><b>Mot de passe</b></label>
     <input type="password" placeholder="Mot de Passe" name="password" [(ngModel)]="model.password" required>
 
-    <button pButton label="Connexion" type="submit" class="ui-button-rounded ui-button-success"></button>
+    <button pButton label="Connexion" (click)="login()" class="ui-button-rounded ui-button-success"></button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>

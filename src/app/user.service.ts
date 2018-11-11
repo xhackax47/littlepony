@@ -60,9 +60,9 @@ export class UserService {
 
   }
 
-  login(usernameOrEmail: string, password: string): Observable<Object> {
+  authToken(usernameOrEmail: string, password: string): Observable <any> {
     const credentials = {usernameOrEmail: usernameOrEmail, password: password};
     console.log("Tentative de login de :" + usernameOrEmail);
-    return this.http.post(this.url + '/login' , this.httpOptions);
+    return this.http.post(this.url + '/login' ,credentials, this.httpOptions);
   }
 }

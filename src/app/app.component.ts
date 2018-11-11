@@ -12,7 +12,7 @@ export class AppComponent {
   identity: string;
 
   constructor(){
-    sessionStorage.setItem('user', this.currentUser.login);
+    sessionStorage.setItem('user', this.currentUser.username);
     this.identity = sessionStorage.getItem('user');
   }
 }
