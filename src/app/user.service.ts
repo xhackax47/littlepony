@@ -43,26 +43,9 @@ export class UserService {
     this.http.delete(this.url + '/' + id, this.httpOptions).subscribe(() => this.router.navigate(['/']));
   }
 
-  authenticate(credentials, callback) {
-
-    const headers = new HttpHeaders(credentials ? {
-      authorization: 'Basic ' + btoa(credentials.username + ':' + credentials.password)
-    } : {});
-
-    this.http.get('user', { headers: headers }).subscribe(response => {
-      if (response['name']) {
-        this.authenticated = true;
-      } else {
-        this.authenticated = false;
-      }
-      return callback && callback();
-    });
-
-  }
-
   authToken(usernameOrEmail: string, password: string): Observable <any> {
     const credentials = {usernameOrEmail: usernameOrEmail, password: password};
     console.log("Tentative de login de :" + usernameOrEmail);
-    return this.http.post(this.url + '/login' ,credentials, this.httpOptions);
+    return this.http.post(this.url + '/login' ,{ usernameOrEmail, password}, this.httpOptions);
   }
 }

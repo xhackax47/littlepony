@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { User } from './user';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +7,6 @@ import { User } from './user';
 })
 export class AppComponent {
   title = 'My Little Ponies';
-  currentUser = new User('PonyUser','password');
-  identity: string;
 
-  constructor(){
-    sessionStorage.setItem('user', this.currentUser.username);
-    this.identity = sessionStorage.getItem('user');
-  }
+  constructor(){}
 }

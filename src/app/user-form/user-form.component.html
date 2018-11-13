@@ -1,7 +1,11 @@
 <h2 *ngIf="add">Entrer un nouvel Utilisateur</h2>
 <h2 *ngIf="!add">Entrer un nouvel Utilisateur</h2>
 <form (ngSubmit)="onSubmit()">
-  <p>Nom : <input type="text" id="login" name="login" [(ngModel)]="model.login" required/>
+  <p>Nom : <input type="text" id="name" name="name" [(ngModel)]="model.name" required/>
+  <br>
+  <p>Nom d'utilisateur : <input type="text" id="username" name="login" [(ngModel)]="model.username" required/>
+  <br>
+  <p>Email : <input type="email" id="email" name="email" [(ngModel)]="model.email" required/>
   <br>
   <p>Mot de passe : <input type="password" id="password" name="password" [(ngModel)]="model.password" required/>
   <br>
